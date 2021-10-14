@@ -1,0 +1,13 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "main": "",
+  "devDependencies": {},
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tondev": "^0.10.4"
+  }
+}
