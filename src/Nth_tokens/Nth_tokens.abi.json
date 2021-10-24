@@ -1,0 +1,130 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "createToken",
+			"inputs": [
+				{"name":"name","type":"string"},
+				{"name":"teamName","type":"string"},
+				{"name":"position","type":"string"},
+				{"name":"salary","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"tokenId","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTokenOwner",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"pubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTokenInfo",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"teamName","type":"string"},
+				{"name":"position","type":"string"},
+				{"name":"salary","type":"uint256"},
+				{"name":"onSale","type":"bool"},
+				{"name":"salePrice","type":"uint256"}
+			]
+		},
+		{
+			"name": "putUpForSale",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"salePrice","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "takeOffFromSale",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "changeTokenOwner",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"pubkeyOfNewOwner","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "changeName",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"name","type":"string"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "changeTeamName",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"teamName","type":"string"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "changePosition",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"position","type":"string"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "changeSalary",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"},
+				{"name":"salary","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"tokenToOwner","type":"map(uint256,uint256)"},
+		{"name":"tokenNames","type":"optional(cell)"},
+		{"components":[{"name":"name","type":"string"},{"name":"teamName","type":"string"},{"name":"position","type":"string"},{"name":"salary","type":"uint256"},{"name":"onSale","type":"bool"},{"name":"salePrice","type":"uint256"}],"name":"tokensArray","type":"tuple[]"}
+	]
+}
