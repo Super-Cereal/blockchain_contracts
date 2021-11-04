@@ -10,10 +10,8 @@ import "./BaseUnit.sol";
 
 contract ArcherUnit is BaseUnit {
   constructor(uint hp, uint armor)  public {
-    setHealth(100);
-    setArmor(20);
-  }
-  function attack(IGameObject opponent) public {
-    opponent.underAttack(getPower());
+    setHealth(60);
+    setArmor(10);
+    setPower(50);
   }
 }

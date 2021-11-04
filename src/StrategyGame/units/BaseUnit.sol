@@ -23,4 +23,8 @@ abstract contract BaseUnit is GameObject {
   function getPower() virtual public returns (uint) {
     return power;
   }
+
+  function attack(IGameObject opponent) public {
+    opponent.underAttack(getPower());
+  }
 }

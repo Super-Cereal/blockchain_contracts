@@ -6,15 +6,12 @@
 pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
-import "../GameObject.sol";
-import "../IGameObject.sol";
+import "./BaseUnit.sol";
 
-contract BaseUnit is GameObject {
-  constructor(uint hp, uint armor) public {
+contract WarriorUnit is BaseUnit {
+  constructor(uint hp, uint armor)  public {
     setHealth(100);
     setArmor(20);
-  }
-  function attack(IGameObject opponent) virtual public {
-    
+    setPower(50);
   }
 }
