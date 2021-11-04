@@ -13,5 +13,6 @@ contract WarriorUnit is BaseUnit {
     setHealth(100);
     setArmor(20);
     setPower(50);
+    setUnitType('warrior');
   }
 }

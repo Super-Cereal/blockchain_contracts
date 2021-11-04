@@ -34,17 +34,16 @@ contract GameObject is IGameObject {
     return armor;
   }
 
-  function dead(address opponent) virtual public {
+
+  function dead(address opponent) public {
     opponent.transfer(0, true, 128 + 32);
   }
-
-  function underAttack(uint power) virtual external override returns (bool isKilled) {
+  function underAttack(uint power) virtual external override {
     uint strike = power - getArmor();
     if (strike > 0) {
       setHealth(getHealth() - strike);
     }
-    isKilled = getHealth() == 0;
-    if (isKilled) {
+    if (getHealth() == 0) {
       dead(msg.sender);
     }
   }

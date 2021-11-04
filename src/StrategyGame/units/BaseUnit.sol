@@ -9,7 +9,7 @@ pragma AbiHeader expire;
 import "../GameObject.sol";
 import "../IGameObject.sol";
 
-abstract contract BaseUnit is GameObject {
+contract BaseUnit is GameObject {
   uint private power;
 
   function setPower(uint attackPower) virtual internal {
@@ -23,7 +23,11 @@ abstract contract BaseUnit is GameObject {
   function getPower() virtual public returns (uint) {
     return power;
   }
-
+  
+  function dead(address opponent) virtual public {
+    opponent.transfer(0, true, 128 + 32);
+  }
+  
   function attack(IGameObject opponent) public {
     opponent.underAttack(getPower());
   }

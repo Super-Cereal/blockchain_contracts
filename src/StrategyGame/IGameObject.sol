@@ -6,7 +6,7 @@ pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
 interface IGameObject {
-  function underAttack(uint power) external returns (bool isKilled);
+  function underAttack(uint power) external;
   function getHealth() external returns (uint);
   function getArmor() external returns (uint);
 }

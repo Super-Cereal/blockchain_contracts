@@ -13,5 +13,6 @@ contract ArcherUnit is BaseUnit {
     setHealth(60);
     setArmor(10);
     setPower(50);
+    setUnitType('archer');
   }
 }
