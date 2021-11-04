@@ -24,10 +24,6 @@ contract BaseUnit is GameObject {
     return power;
   }
   
-  function dead(address opponent) virtual public {
-    opponent.transfer(0, true, 128 + 32);
-  }
-  
   function attack(IGameObject opponent) public {
     opponent.underAttack(getPower());
   }
